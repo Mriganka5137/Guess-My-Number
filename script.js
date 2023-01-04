@@ -10,7 +10,7 @@ console.log(document.querySelector('.guess').value);
 
 */
 // Selecting Random Number
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 // Score Value
 let score = 20;
@@ -58,7 +58,8 @@ document.querySelector('.check').addEventListener('click', function () {
 
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
-  document.querySelector('.score').textContent = '20';
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.guess').value = '';
